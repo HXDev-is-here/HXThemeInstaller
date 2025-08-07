@@ -3,11 +3,6 @@
 # HXPanel Theme Installer
 # Usage: curl https://raw.githubusercontent.com/HXNodes/HXThemeInstaller/main/install.sh | sh
 
-echo "=========================================="
-echo "           HXPanel Theme Installer"
-echo "=========================================="
-echo ""
-
 # Check if running as root
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root (use sudo)"
@@ -25,19 +20,6 @@ fi
 if ! command -v npm &> /dev/null; then
     echo "npm is not installed. Installing npm..."
     apt-get install -y npm
-fi
-
-# Prompt for license key
-echo "Please enter your license key:"
-read LICENSE_KEY
-
-# Export license key as environment variable
-export LICENSE_KEY="$LICENSE_KEY"
-
-# Check if the installation directory exists, if not create it
-if [ ! -d "/var/www/pterodactyl" ]; then
-    echo "Creating installation directory..."
-    mkdir -p /var/www/pterodactyl
 fi
 
 # Download and run the JavaScript installer
