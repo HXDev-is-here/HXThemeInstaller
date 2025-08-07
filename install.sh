@@ -29,7 +29,7 @@ fi
 
 # Prompt for license key
 echo "Please enter your license key:"
-read -s LICENSE_KEY
+read LICENSE_KEY
 
 # Export license key as environment variable
 export LICENSE_KEY="$LICENSE_KEY"
