@@ -13,13 +13,15 @@ fi
 if ! command -v node &> /dev/null; then
     echo "Node.js is not installed. Installing Node.js..."
     curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-    apt-get install -y nodejs
+    apt-get update
+    apt-get install -y nodejs --fix-broken
 fi
 
 # Check if npm is installed
 if ! command -v npm &> /dev/null; then
     echo "npm is not installed. Installing npm..."
-    apt-get install -y npm
+    apt-get update
+    apt-get install -y npm --fix-broken
 fi
 
 # Download and run the JavaScript installer
